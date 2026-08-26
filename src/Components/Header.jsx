@@ -10,12 +10,12 @@ function Header() {
         </a>
 
         <nav className="nav">
-          <a href="#">Справочник</a>
-          <a href="#">Статьи</a>
-          <a href="./index2.html">Время</a>
-          <a href="#">Новости</a>
-          <a href="./tools.html">Инструменты</a>
-          <a href="./charts.html">Графики</a>
+          <a href="">Справочник</a>
+          <a href="">Статьи</a>
+          <a href="">Время</a>
+          <a href="">Новости</a>
+          <a href="">Инструменты</a>
+          <a href="">Графики</a>
         </nav>
 
         <button className="header-button">Подписаться</button>

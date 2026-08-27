@@ -1,0 +1,579 @@
+/* Time hero */
+
+.time-hero {
+  position: relative;
+
+  min-height: 360px;
+
+  padding: 70px 30px 60px;
+
+  overflow: hidden;
+
+  border-radius: 0 0 22px 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 15%,
+      rgba(255, 255, 255, 0.95),
+      transparent 48%
+    ),
+    linear-gradient(
+      180deg,
+      #e6e6f8 0%,
+      #d9daf1 50%,
+      #aaa9c8 100%
+    );
+}
+
+
+/* Декоративный круг слева */
+
+.time-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  left: -180px;
+  bottom: -220px;
+
+  border-radius: 50%;
+
+  background: rgba(69, 59, 105, 0.14);
+}
+
+
+/* Декоративный круг справа */
+
+.time-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  right: -170px;
+  bottom: -210px;
+
+  border-radius: 50%;
+
+  background: rgba(82, 68, 125, 0.14);
+}
+
+
+/* Символ */
+
+.time-symbol {
+  position: relative;
+  z-index: 2;
+
+  width: 30px;
+  height: 30px;
+
+  margin-bottom: 18px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 25px;
+}
+
+
+/* Заголовок */
+
+.time-hero h1 {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 16px;
+
+  font-size: clamp(42px, 5vw, 58px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  letter-spacing: -3px;
+}
+
+
+/* Описание */
+
+.time-hero p {
+  position: relative;
+  z-index: 2;
+
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #4b4855;
+}
+
+/* Clock section */
+
+.clocks-section {
+  padding: 70px 5px 20px;
+}
+
+
+/* Заголовок секции */
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(34px, 4vw, 46px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  letter-spacing: -2.5px;
+}
+
+
+.section-heading p {
+  max-width: 280px;
+
+  margin: 0;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  color: #77747d;
+}
+
+
+
+/* Clock grid */
+
+.clock-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+
+/* Clock card */
+
+.clock-card {
+  position: relative;
+
+  min-height: 320px;
+
+  padding: 22px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #302b4a;
+
+  color: white;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.clock-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 35px rgba(39, 35, 53, 0.15);
+}
+
+
+/* Светлые карточки */
+
+.clock-card:nth-child(2),
+.clock-card:nth-child(5),
+.clock-card:nth-child(8) {
+  background:
+    linear-gradient(
+      135deg,
+      #d9d9ef,
+      #b9b7d9
+    );
+
+  color: #302b4a;
+}
+
+
+/* City */
+
+.clock-city {
+  position: relative;
+  z-index: 5;
+
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+
+.clock-country {
+  position: relative;
+  z-index: 5;
+
+  margin-top: 3px;
+
+  font-size: 9px;
+
+  opacity: 0.55;
+}
+
+/* Clock */
+
+.clock {
+  position: absolute;
+
+  left: 50%;
+  bottom: 25px;
+
+  width: 190px;
+  height: 190px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 28%,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 255, 255, 0.08) 34%,
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #bdb9eb,
+      #716aa8
+    );
+
+  border: 5px solid rgba(255, 255, 255, 0.48);
+
+  box-shadow:
+    inset -12px -12px 22px rgba(35, 30, 72, 0.30),
+    inset 8px 8px 18px rgba(255, 255, 255, 0.45),
+    0 16px 30px rgba(27, 23, 54, 0.24);
+
+  box-sizing: border-box;
+}
+
+
+/* Часы на светлой карточке */
+
+.clock-card:nth-child(2) .clock,
+.clock-card:nth-child(5) .clock,
+.clock-card:nth-child(8) .clock {
+  background:
+    radial-gradient(
+      circle at 35% 28%,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 255, 255, 0.1) 34%,
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #cbc8f0,
+      #8c85c5
+    );
+}
+
+
+/* Clock face */
+
+.clock-face {
+  position: absolute;
+
+  inset: 12px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+
+/* Clock number */
+
+.number {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 22px;
+  height: 22px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  color: rgba(48, 43, 74, 0.72);
+}
+
+
+.number-12 {
+  top: 14px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+
+.number-3 {
+  right: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+.number-6 {
+  bottom: 14px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+
+.number-9 {
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+/* Clock ticks */
+
+.ticks {
+  position: absolute;
+
+  inset: 15px;
+
+  border-radius: 50%;
+}
+
+
+.ticks::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 50%;
+
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(48, 43, 74, 0.48) 0deg 1deg,
+      transparent 1deg 30deg
+    );
+
+  -webkit-mask:
+    radial-gradient(
+      circle,
+      transparent 0 82%,
+      #000 83% 88%,
+      transparent 89%
+    );
+
+  mask:
+    radial-gradient(
+      circle,
+      transparent 0 82%,
+      #000 83% 88%,
+      transparent 89%
+    );
+}
+
+
+/* Hands */
+
+.hands {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 8;
+
+  pointer-events: none;
+}
+
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform-origin: 50% 100%;
+
+  border-radius: 10px;
+
+  will-change: transform;
+}
+
+
+/* Часовая */
+
+.hour-hand {
+  width: 6px;
+  height: 43px;
+
+  margin-left: -3px;
+  margin-top: -43px;
+
+  background: #302b4a;
+
+  z-index: 8;
+}
+
+
+/* Минутная */
+
+.minute-hand {
+  width: 4px;
+  height: 61px;
+
+  margin-left: -2px;
+  margin-top: -61px;
+
+  background: #302b4a;
+
+  z-index: 9;
+}
+
+
+/* Секундная */
+
+.second-hand {
+  width: 2px;
+  height: 68px;
+
+  margin-left: -1px;
+  margin-top: -68px;
+
+  background: #756ba8;
+
+  z-index: 10;
+}
+
+
+/* Center */
+
+.clock-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 11px;
+  height: 11px;
+
+  margin-left: -5.5px;
+  margin-top: -5.5px;
+
+  border-radius: 50%;
+
+  background: #302b4a;
+
+  border: 2px solid rgba(255, 255, 255, 0.6);
+
+  z-index: 20;
+}
+
+/* Digital Time */
+
+.digital-time {
+  position: absolute;
+
+  left: 50%;
+  bottom: 8px;
+
+  transform: translateX(-50%);
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+
+  white-space: nowrap;
+
+  opacity: 0.7;
+
+  z-index: 30;
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .clock-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .clocks-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .clock-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-hero h1 {
+    font-size: 40px;
+  }
+
+}

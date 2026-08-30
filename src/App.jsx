@@ -5,6 +5,8 @@ import Footer from "./Components/Footer";
 
 import Home from "./Pages/Home";
 import Time from "./Pages/Time";
+import Tools from "./Pages/Tools";
+
 
 function App() {
   return (
@@ -17,8 +19,22 @@ function App() {
         <main className="content">
 
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/time" element={<Time />} />
+
+            <Route
+              path="/"
+              element={<Home />}
+            />
+
+            <Route
+              path="/time"
+              element={<Time />}
+            />
+
+            <Route
+              path="/tools"
+              element={<Tools />}
+            />
+
           </Routes>
 
         </main>

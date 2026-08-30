@@ -1,4 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
@@ -6,9 +10,11 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Time from "./Pages/Time";
 import Tools from "./Pages/Tools";
+import Charts from "./Pages/Charts";
 
 
 function App() {
+
   return (
     <BrowserRouter>
 
@@ -35,6 +41,11 @@ function App() {
               element={<Tools />}
             />
 
+            <Route
+              path="/charts"
+              element={<Charts />}
+            />
+
           </Routes>
 
         </main>
@@ -46,5 +57,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;

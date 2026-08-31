@@ -13,6 +13,8 @@ import Tools from "./Pages/Tools";
 import Charts from "./Pages/Charts";
 import NewsDetail from "./Pages/NewsDetail";
 import Guide from "./Pages/Guide";
+import Articles from "./Pages/Articles";
+import ArticleDetail from "./Pages/ArticleDetail";
 
 
 function App() {
@@ -58,6 +60,15 @@ function App() {
               path="/charts"
               element={<Charts />}
             />
+
+            <Route path="/articles"
+             element={<Articles />} 
+             />
+
+             <Route
+             path="/articles/:id"
+             element={<ArticleDetail />}
+             />
 
           </Routes>
 

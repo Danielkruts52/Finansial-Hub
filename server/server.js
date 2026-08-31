@@ -12,6 +12,73 @@ app.use(express.json());
 
 
 
+
+// Все статьи
+
+app.get("/api/articles", async (req, res) => {
+  try {
+    const [articles] = await db.query(`
+      SELECT
+        id,
+        name,
+        description,
+        category,
+        Annotation,
+        img
+      FROM articles
+      ORDER BY id DESC
+    `);
+
+    res.json(articles);
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Ошибка при получении статей",
+    });
+  }
+});
+
+
+// Одна статья
+
+app.get("/api/articles/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const [articles] = await db.query(
+      `
+      SELECT
+        id,
+        name,
+        description,
+        category,
+        Annotation,
+        img
+      FROM articles
+      WHERE id = ?
+      `,
+      [id]
+    );
+
+    if (articles.length === 0) {
+      return res.status(404).json({
+        message: "Статья не найдена",
+      });
+    }
+
+    res.json(articles[0]);
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Ошибка при получении статьи",
+    });
+  }
+});
+
 // Все термины
 
 app.get("/api/guide", async (req, res) => {

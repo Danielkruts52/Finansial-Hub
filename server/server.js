@@ -11,6 +11,70 @@ app.use(cors());
 app.use(express.json());
 
 
+
+// Все термины
+
+app.get("/api/guide", async (req, res) => {
+  try {
+    const [guide] = await db.query(`
+      SELECT
+        id,
+        name,
+        description,
+        category
+      FROM Guide
+      ORDER BY name ASC
+    `);
+
+    res.json(guide);
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Ошибка при получении справочника",
+    });
+  }
+});
+
+
+// Один термин
+
+app.get("/api/guide/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const [guide] = await db.query(
+      `
+      SELECT
+        id,
+        name,
+        description,
+        category
+      FROM Guide
+      WHERE id = ?
+      `,
+      [id]
+    );
+
+    if (guide.length === 0) {
+      return res.status(404).json({
+        message: "Термин не найден",
+      });
+    }
+
+    res.json(guide[0]);
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Ошибка при получении термина",
+    });
+  }
+});
+
+
 // Все новости
 
 app.get("/api/news", async (req, res) => {

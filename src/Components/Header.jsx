@@ -11,7 +11,7 @@ function Header() {
         </Link>
 
         <nav className="nav">
-  <Link to="/directory">Справочник</Link>
+  <Link to="/guide">Справочник</Link>
   <Link to="/articles">Статьи</Link>
   <Link to="/time">Время</Link>
   <Link to="/news">Новости</Link>

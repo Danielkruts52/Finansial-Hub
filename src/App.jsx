@@ -12,6 +12,7 @@ import Time from "./Pages/Time";
 import Tools from "./Pages/Tools";
 import Charts from "./Pages/Charts";
 import NewsDetail from "./Pages/NewsDetail";
+import Guide from "./Pages/Guide";
 
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
             <Route
               path="/"
               element={<Home />}
+            />
+
+            <Route path="/guide" 
+            element={<Guide />} 
             />
 
             <Route

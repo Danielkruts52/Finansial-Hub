@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import "../css/Home.css"
 
 function Home() {
@@ -146,10 +147,10 @@ function UseCase(){
             На нашем портале вы можете визуализировать графики прибыли, продаж и других данных вашей компании на усмотрение
           </p>
 
-          <a href="#" className="learn-more">
-            <span>→</span>
-            Начать
-          </a>
+          <Link to="/charts" className="learn-more">
+          <span>→</span>
+          Начать
+          </Link>
 
           <div className="bank">
             <div className="bank-roof"></div>

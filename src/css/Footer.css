@@ -1,13 +1,54 @@
 .footer {
+  width: 100%;
   max-width: 1240px;
-
   margin: 0 auto;
   padding: 30px 20px 50px;
 
-  background: #f7f7f8;
+  box-sizing: border-box;
 
+  background: #f7f7f8;
   text-align: center;
 
   color: #99979e;
   font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 28px 18px 40px;
+    font-size: 9px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 24px 16px 32px;
+
+    font-size: 8px;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
+
+@media (max-width: 380px) {
+  .footer {
+    padding: 20px 12px 28px;
+
+    font-size: 8px;
+  }
 }

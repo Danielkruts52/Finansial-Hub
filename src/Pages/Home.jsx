@@ -46,7 +46,7 @@ function About() {
           <h2>Что такое Finansial Hub?</h2>
 
           <div className="intro-action">
-            <button className="dark-button">Справочник</button>
+            <Link to='/guide' className="dark-button">Справочник</Link>
           </div>
         </div>
 
